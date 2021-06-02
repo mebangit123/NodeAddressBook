@@ -83,12 +83,16 @@ class Contact
                 ", State: "+this.state+ ", Zip: "+this.zip+ ", PhoneNo: "+this.phoneNo+ ", Email: "+this.email;
     }
 }
+let addressBookArr = new Array()
 try
 {
-    let personContact = new Contact('Meban', 'Nongrum', 'Amjajer', 'Shillong', 'Meghalaya', 234343, '91 2435343876', 'nongrum@gmail.com')
-    console.log(personContact.toString())
+    let personContact1 = new Contact('Meban', 'Nongrum', 'Amjajer', 'Shillong', 'Meghalaya', 234343, '91 2435343876', 'nongrum@gmail.com')
+    let personContact2 = new Contact('Jasp', 'Dhar', 'Nartiang', 'Jowai', 'Meghalaya', 878698, '98 9868658797', 'jasp@outlook.com')
+    addressBookArr.push(personContact1)
+    addressBookArr.push(personContact2)
 }
 catch(e)
 {
     console.error(e)
 }
+console.log(addressBookArr)

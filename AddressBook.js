@@ -95,4 +95,8 @@ catch(e)
 {
     console.error(e)
 }
-console.log(addressBookArr)
+function findFirstName(contact)
+{
+    return contact.firstName.includes("Meban")
+}
+console.log(addressBookArr.find(findFirstName))

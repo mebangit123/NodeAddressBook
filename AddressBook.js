@@ -95,8 +95,11 @@ catch(e)
 {
     console.error(e)
 }
+
 console.log(addressBookArr.filter(contact => contact.firstName == 'Jasp'))
 
 let deleteArr = addressBookArr.filter(contact => contact.firstName == 'Meban')
 addressBookArr.splice(deleteArr, 1)
 console.log(addressBookArr)
+
+console.log(addressBookArr.length)

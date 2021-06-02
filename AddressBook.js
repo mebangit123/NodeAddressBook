@@ -103,3 +103,6 @@ addressBookArr.splice(deleteArr, 1)
 console.log(addressBookArr)
 
 console.log(addressBookArr.length)
+
+console.log(addressBookArr.filter(contact => contact.city == "Shillong"))
+console.log(addressBookArr.filter(contact => contact.state == "Meghalaya"))

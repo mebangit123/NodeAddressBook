@@ -95,8 +95,8 @@ catch(e)
 {
     console.error(e)
 }
-function findFirstName(contact)
-{
-    return contact.firstName.includes("Meban")
-}
-console.log(addressBookArr.find(findFirstName))
+console.log(addressBookArr.filter(contact => contact.firstName == 'Jasp'))
+
+let deleteArr = addressBookArr.filter(contact => contact.firstName == 'Meban')
+addressBookArr.splice(deleteArr, 1)
+console.log(addressBookArr)

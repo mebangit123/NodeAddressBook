@@ -86,8 +86,8 @@ class Contact
 let addressBookArr = new Array()
 try
 {
-    let personContact1 = new Contact('Meban', 'Nongrum', 'Amjajer', 'Shillong', 'Meghalaya', 234343, '91 2435343876', 'nongrum@gmail.com')
-    let personContact2 = new Contact('Jasp', 'Dhar', 'Nartiang', 'Jowai', 'Meghalaya', 878698, '98 9868658797', 'jasp@outlook.com')
+    let personContact1 = new Contact('Meban', 'Nongrum', 'Amjajer', 'Shillong', 'Meghalaya', '234343', '91 2435343876', 'nongrum@gmail.com')
+    let personContact2 = new Contact('Jasp', 'Dhar', 'Nartiang', 'Jowai', 'Assam', '878698', '98 9868658797', 'jasp@outlook.com')
     addressBookArr.push(personContact1)
     addressBookArr.push(personContact2)
 }
@@ -111,7 +111,7 @@ console.log(addressBookArr.filter(contact => contact.city == "Jowai")
                           .map(contact => contact.firstName))
                          
 console.log(addressBookArr.filter(contact => contact.state == "Meghalaya")
-                                            .map(contact => contact._firstName))
+                          .map(contact => contact._firstName))
 
 console.log(addressBookArr.filter(contact => contact.city == "Shillong")
                           .reduce((count, contact) => contact.firstName ? ++count : count, 0))
@@ -120,3 +120,7 @@ console.log(addressBookArr.filter(contact => contact.state == "Meghalaya")
                           .reduce((count, contact) => contact.firstName ? ++count : count, 0))
 
 console.log(addressBookArr.sort((a, b) => a.firstName.localeCompare(b.firstName)))
+
+console.log(addressBookArr.sort((a, b) => a.city.localeCompare(b.city)))
+console.log(addressBookArr.sort((a, b) => a.state.localeCompare(b.state)))
+console.log(addressBookArr.sort((a, b) => a.zip.localeCompare(b.zip)))

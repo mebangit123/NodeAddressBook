@@ -118,3 +118,5 @@ console.log(addressBookArr.filter(contact => contact.city == "Shillong")
 
 console.log(addressBookArr.filter(contact => contact.state == "Meghalaya")
                           .reduce((count, contact) => contact.firstName ? ++count : count, 0))
+
+console.log(addressBookArr.sort((a, b) => a.firstName.localeCompare(b.firstName)))

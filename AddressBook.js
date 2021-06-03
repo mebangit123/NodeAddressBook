@@ -110,6 +110,11 @@ console.log(addressBookArr.filter(contact => contact.state == "Meghalaya"))
 console.log(addressBookArr.filter(contact => contact.city == "Jowai")
                           .map(contact => contact.firstName))
                          
-
 console.log(addressBookArr.filter(contact => contact.state == "Meghalaya")
                                             .map(contact => contact._firstName))
+
+console.log(addressBookArr.filter(contact => contact.city == "Shillong")
+                          .reduce((count, contact) => contact.firstName ? ++count : count, 0))
+
+console.log(addressBookArr.filter(contact => contact.state == "Meghalaya")
+                          .reduce((count, contact) => contact.firstName ? ++count : count, 0))

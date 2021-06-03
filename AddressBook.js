@@ -80,7 +80,7 @@ class Contact
     toString()
     {
         return "FirstName: "+this.firstName+ ", LastName: "+this.lastName+ ", Address: "+this.address+ ", City: "+this.city+
-                ", State: "+this.state+ ", Zip: "+this.zip+ ", PhoneNo: "+this.phoneNo+ ", Email: "+this.email;
+                ", State: "+this.state + ", Zip: "+this.zip+ ", PhoneNo: "+this.phoneNo+ ", Email: "+this.email;
     }
 }
 let addressBookArr = new Array()
@@ -106,3 +106,10 @@ console.log(addressBookArr.length)
 
 console.log(addressBookArr.filter(contact => contact.city == "Shillong"))
 console.log(addressBookArr.filter(contact => contact.state == "Meghalaya"))
+
+console.log(addressBookArr.filter(contact => contact.city == "Jowai")
+                          .map(contact => contact.firstName))
+                         
+
+console.log(addressBookArr.filter(contact => contact.state == "Meghalaya")
+                                            .map(contact => contact._firstName))

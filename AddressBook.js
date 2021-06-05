@@ -15,6 +15,7 @@ class Contact
     get firstName(){ return this._firstName }
     set firstName(firstName)
     {
+
         let f_nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$')
         if(f_nameRegex.test(firstName))
             this._firstName = firstName
@@ -88,39 +89,27 @@ try
 {
     let personContact1 = new Contact('Meban', 'Nongrum', 'Amjajer', 'Shillong', 'Meghalaya', '234343', '91 2435343876', 'nongrum@gmail.com')
     let personContact2 = new Contact('Jasp', 'Dhar', 'Nartiang', 'Jowai', 'Assam', '878698', '98 9868658797', 'jasp@outlook.com')
-    addressBookArr.push(personContact1)
-    addressBookArr.push(personContact2)
+    let personContact3 = new Contact('Jasp', 'Dhar', 'Nartiang', 'Jowai', 'Assam', '878698', '98 9868658797', 'jasp@outlook.com')
+    
+    addContact(personContact1)
+    addContact(personContact2)
+    addContact(personContact3)
 }
 catch(e)
 {
     console.error(e)
 }
 
-console.log(addressBookArr.filter(contact => contact.firstName == 'Jasp'))
-
-let deleteArr = addressBookArr.filter(contact => contact.firstName == 'Meban')
-addressBookArr.splice(deleteArr, 1)
+function addContact(contact){
+    let duplicateContact = null;
+    for(let i = 0; i < addressBookArr.length; i++){
+        if(addressBookArr[i].firstName === contact.firstName){
+            duplicateContact = addressBookArr[i]
+        }
+    }
+    if(duplicateContact != null)
+        console.log("Dupicate Contact Found.")
+    else
+    addressBookArr.push(contact)
+}
 console.log(addressBookArr)
-
-console.log(addressBookArr.length)
-
-console.log(addressBookArr.filter(contact => contact.city == "Shillong"))
-console.log(addressBookArr.filter(contact => contact.state == "Meghalaya"))
-
-console.log(addressBookArr.filter(contact => contact.city == "Jowai")
-                          .map(contact => contact.firstName))
-                         
-console.log(addressBookArr.filter(contact => contact.state == "Meghalaya")
-                          .map(contact => contact._firstName))
-
-console.log(addressBookArr.filter(contact => contact.city == "Shillong")
-                          .reduce((count, contact) => contact.firstName ? ++count : count, 0))
-
-console.log(addressBookArr.filter(contact => contact.state == "Meghalaya")
-                          .reduce((count, contact) => contact.firstName ? ++count : count, 0))
-
-console.log(addressBookArr.sort((a, b) => a.firstName.localeCompare(b.firstName)))
-
-console.log(addressBookArr.sort((a, b) => a.city.localeCompare(b.city)))
-console.log(addressBookArr.sort((a, b) => a.state.localeCompare(b.state)))
-console.log(addressBookArr.sort((a, b) => a.zip.localeCompare(b.zip)))
